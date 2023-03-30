@@ -1,0 +1,6 @@
+data/
+.idea/
+
+data_sorted/
+
+__pycache__/
