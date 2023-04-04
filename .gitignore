@@ -6,3 +6,5 @@ data_sorted/
 __pycache__/
 
 data_processed/
+
+data_512/

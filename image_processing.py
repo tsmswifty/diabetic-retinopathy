@@ -65,11 +65,11 @@ def circle_crop_wrapper(dir_arg):
 
 
 def process_image(dir_arg):
-    for file in os.listdir(dir_arg):
+    for file in os.listdir(os.path.join("data_sorted", dir_arg)):
         print(file)
         # read image
-        image = cv2.imread(os.path.join(dir_arg, file))
-        scale_percent = 30
+        image = cv2.imread(os.path.join("data_sorted", dir_arg, file))
+        scale_percent = 50
         width = int(image.shape[1] * scale_percent / 100)
         height = int(image.shape[0] * scale_percent / 100)
         dim = (width, height)
@@ -84,14 +84,17 @@ def process_image(dir_arg):
         cnts = sorted(cnts, key=cv2.contourArea, reverse=True)
         for c in cnts:
             x, y, w, h = cv2.boundingRect(c)
-            ROI = image[y : y + h, x : x + w]
+            ROI = image[y: y + h, x: x + w]
             break
 
         height, width, _ = ROI.shape
         size = min(height, width)
         x = int((width - size) / 2)
         y = int((height - size) / 2)
-        crop_img = ROI[y : y + size, x : x + size]
+        crop_img = ROI[y: y + size, x: x + size]
+        if crop_img.shape[0] < 512 or crop_img.shape[1] < 512:
+            continue
+        crop_img = cv2.resize(crop_img, (512, 512), interpolation=cv2.INTER_AREA)
 
         # CLAHE
         # img = cv2.fastNlMeansDenoisingColored(crop_img, None, 1, 1, 7, 21)
@@ -105,15 +108,15 @@ def process_image(dir_arg):
             crop_img, 4, cv2.GaussianBlur(crop_img, (0, 0), 10), -4, 128
         )
 
-        cv2.imwrite(os.path.join(dir_arg + "_processed", file), image)
+        cv2.imwrite(os.path.join("data_512", dir_arg, file), image)
 
 
 if __name__ == "__main__":
-    # processes = [
-    #     multiprocessing.Process(target=process_image, args=(str(dir_arg),))
-    #     for dir_arg in range(5)
-    # ]
-    # [p.start() for p in processes]
-    # result = [p.join() for p in processes]
-    # print(result)
-    circle_crop_wrapper("test_imgs")
+    processes = [
+        multiprocessing.Process(target=process_image, args=(str(dir_arg),))
+        for dir_arg in range(5)
+    ]
+    [p.start() for p in processes]
+    result = [p.join() for p in processes]
+    print(result)
+    # circle_crop_wrapper("test_imgs")
