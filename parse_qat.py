@@ -18,15 +18,15 @@ print(len(accuracy_list))
 
 num_epochs = len(accuracy_list)
 
-fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
+fig, ax = plt.subplots()
 
-fig.suptitle("Accuracy vs. Epoch Number")
+fig.suptitle('Validation Accuracy')
 
-ax1.plot(range(num_epochs), accuracy_list)
-ax1.set_ylabel("Accuracy")
+ax.plot(range(num_epochs), accuracy_list, label='INT8 Quantized Model')
+# ax.plot(range(num_epochs), accuracy_list, alpha=0.5, linestyle='--')
 
-ax2.plot(range(num_epochs), accuracy_list)
-ax2.set_xlabel("Epoch Number")
-ax2.set_ylabel("Accuracy")
+ax.set_xlabel('Epoch Number')
+ax.set_ylabel('Accuracy')
+ax.legend()
 
 plt.show()
