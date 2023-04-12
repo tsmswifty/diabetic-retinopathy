@@ -1,0 +1,51 @@
+ enum.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/functional.py:439: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/functional.py:439: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+/opt/conda/lib/python3.8/site-packages/torchvision/transforms/functional.py:439: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
+  warnings.warn(
+EPOCH [2/100] (2334 / 1162 Steps) (loss=0.54199) (lr=0.0010000):   1%|| 10/1162 [00:08<14:26,  1.33it/s]^CWARNING:torch.distributed.elastic.agent.server.api:Received 2 death signal, shutting down workers
+WARNING:torch.distributed.elastic.multiprocessing.api:Sending process 453 closing signal SIGINT
+EPOCH [2/100] (2334 / 1162 Steps) (loss=0.54199) (lr=0.0010000):   1%|| 10/1162 [00:09<17:58,  1.07it/s]
+Traceback (most recent call last):
+  File "main.py", line 476, in <module>
+    main()
+  File "main.py", line 472, in main
+    train(args, config)
+  File "main.py", line 304, in train
+    scaled_loss.backward()
+  File "/opt/conda/lib/python3.8/site-packages/torch/_tensor.py", line 484, in backward
+    torch.autograd.backward(
+  File "/opt/conda/lib/python3.8/site-packages/torch/autograd/__init__.py", line 191, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/opt/conda/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/launch.py", line 195, in <module>
+    main()
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/launch.py", line 191, in main
+    launch(args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/launch.py", line 176, in launch
+    run(args)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/run.py", line 753, in run
+    elastic_launch(
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 237, in launch_agent
+    result = agent.run()
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/elastic/agent/server/api.py", line 709, in run
+    result = self._invoke_run(role)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/elastic/agent/server/api.py", line 850, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/opt/conda/lib/python3.8/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 60, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 406 got signal: 2
+root@79d1b0842ca4:/workspace/FasterTransformer/examples/pytorch/vit/ViT-quantization# 
+ 
