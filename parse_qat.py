@@ -43,5 +43,4 @@ ax.set_xlabel('Epoch Number')
 ax.set_ylabel('Accuracy')
 ax.legend()
 
-plt.show()
 plt.savefig("valacc.png")
