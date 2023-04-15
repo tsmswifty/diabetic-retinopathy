@@ -84,14 +84,14 @@ def process_image(dir_arg):
         cnts = sorted(cnts, key=cv2.contourArea, reverse=True)
         for c in cnts:
             x, y, w, h = cv2.boundingRect(c)
-            ROI = image[y: y + h, x: x + w]
+            ROI = image[y : y + h, x : x + w]
             break
 
         height, width, _ = ROI.shape
         size = min(height, width)
         x = int((width - size) / 2)
         y = int((height - size) / 2)
-        crop_img = ROI[y: y + size, x: x + size]
+        crop_img = ROI[y : y + size, x : x + size]
         if crop_img.shape[0] < 512 or crop_img.shape[1] < 512:
             continue
         crop_img = cv2.resize(crop_img, (512, 512), interpolation=cv2.INTER_AREA)
