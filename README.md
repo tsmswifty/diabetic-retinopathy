@@ -108,3 +108,114 @@
 | segment.small_pool.current | 53 | 51 | 2 |
 | segment.small_pool.freed | 4 | 0 | 4 |
 | segment.small_pool.peak | 53 | 51 | 2 |
+
+# eval() stats
+| key | QAT | ViT | QAT - ViT difference|
+| ---------------------| --------| -------| ---------------------|
+| active.all.allocated | 211295 | 58042 | 153253 |
+| active.all.current | 710 | 364 | 346 |
+| active.all.freed | 210585 | 57678 | 152907 |
+| active.all.peak | 728 | 375 | 353 |
+| active.large_pool.allocated | 67202 | 22898 | 44304 |
+| active.large_pool.current | 85 | 86 | -1 |
+| active.large_pool.freed | 67117 | 22812 | 44305 |
+| active.large_pool.peak | 99 | 96 | 3 |
+| active.small_pool.allocated | 144093 | 35144 | 108949 |
+| active.small_pool.current | 625 | 278 | 347 |
+| active.small_pool.freed | 143468 | 34866 | 108602 |
+| active.small_pool.peak | 631 | 283 | 348 |
+| active_bytes.all.allocated | 24.5 TB | 9.15 TB | 15.34 TB |
+| active_bytes.all.current | 590.73 MB | 488.99 MB | 101.73 MB |
+| active_bytes.all.freed | 24.49 TB | 9.15 TB | 15.34 TB |
+| active_bytes.all.peak | 9.46 GB | 6.09 GB | 3.38 GB |
+| active_bytes.large_pool.allocated | 24.49 TB | 9.14 TB | 15.35 TB |
+| active_bytes.large_pool.current | 566.94 MB | 465.38 MB | 101.56 MB |
+| active_bytes.large_pool.freed | 24.49 TB | 9.14 TB | 15.35 TB |
+| active_bytes.large_pool.peak | 9.44 GB | 6.06 GB | 3.38 GB |
+| active_bytes.small_pool.allocated | 4.37 GB | 8.4 GB | -4327959552 Bytes |
+| active_bytes.small_pool.current | 23.79 MB | 23.62 MB | 175.0 KB |
+| active_bytes.small_pool.freed | 4.35 GB | 8.38 GB | -4328138752 Bytes |
+| active_bytes.small_pool.peak | 25.8 MB | 25.63 MB | 173.0 KB |
+| allocated_bytes.all.allocated | 24.5 TB | 9.15 TB | 15.34 TB |
+| allocated_bytes.all.current | 590.73 MB | 488.99 MB | 101.73 MB |
+| allocated_bytes.all.freed | 24.49 TB | 9.15 TB | 15.34 TB |
+| allocated_bytes.all.peak | 9.46 GB | 6.09 GB | 3.38 GB |
+| allocated_bytes.large_pool.allocated | 24.49 TB | 9.14 TB | 15.35 TB |
+| allocated_bytes.large_pool.current | 566.94 MB | 465.38 MB | 101.56 MB |
+| allocated_bytes.large_pool.freed | 24.49 TB | 9.14 TB | 15.35 TB |
+| allocated_bytes.large_pool.peak | 9.44 GB | 6.06 GB | 3.38 GB |
+| allocated_bytes.small_pool.allocated | 4.37 GB | 8.4 GB | -4327959552 Bytes |
+| allocated_bytes.small_pool.current | 23.79 MB | 23.62 MB | 175.0 KB |
+| allocated_bytes.small_pool.freed | 4.35 GB | 8.38 GB | -4328138752 Bytes |
+| allocated_bytes.small_pool.peak | 25.8 MB | 25.63 MB | 173.0 KB |
+| allocation.all.allocated | 211295 | 58042 | 153253 |
+| allocation.all.current | 710 | 364 | 346 |
+| allocation.all.freed | 210585 | 57678 | 152907 |
+| allocation.all.peak | 728 | 375 | 353 |
+| allocation.large_pool.allocated | 67202 | 22898 | 44304 |
+| allocation.large_pool.current | 85 | 86 | -1 |
+| allocation.large_pool.freed | 67117 | 22812 | 44305 |
+| allocation.large_pool.peak | 99 | 96 | 3 |
+| allocation.small_pool.allocated | 144093 | 35144 | 108949 |
+| allocation.small_pool.current | 625 | 278 | 347 |
+| allocation.small_pool.freed | 143468 | 34866 | 108602 |
+| allocation.small_pool.peak | 631 | 283 | 348 |
+| inactive_split.all.allocated | 94905 | 28516 | 66389 |
+| inactive_split.all.current | 22 | 23 | -1 |
+| inactive_split.all.freed | 94883 | 28493 | 66390 |
+| inactive_split.all.peak | 32 | 30 | 2 |
+| inactive_split.large_pool.allocated | 35869 | 10823 | 25046 |
+| inactive_split.large_pool.current | 19 | 20 | -1 |
+| inactive_split.large_pool.freed | 35850 | 10803 | 25047 |
+| inactive_split.large_pool.peak | 27 | 25 | 2 |
+| inactive_split.small_pool.allocated | 59036 | 17693 | 41343 |
+| inactive_split.small_pool.current | 3 | 3 | 0 |
+| inactive_split.small_pool.freed | 59033 | 17690 | 41343 |
+| inactive_split.small_pool.peak | 7 | 6 | 1 |
+| inactive_split_bytes.all.allocated | 13.71 TB | 4.94 TB | 8.76 TB |
+| inactive_split_bytes.all.current | 49.27 MB | 151.01 MB | -106675200 Bytes |
+| inactive_split_bytes.all.freed | 13.71 TB | 4.94 TB | 8.76 TB |
+| inactive_split_bytes.all.peak | 2.35 GB | 3.06 GB | -770139648 Bytes |
+| inactive_split_bytes.large_pool.allocated | 13.7 TB | 4.93 TB | 8.77 TB |
+| inactive_split_bytes.large_pool.current | 49.06 MB | 150.62 MB | -106496000 Bytes |
+| inactive_split_bytes.large_pool.freed | 13.7 TB | 4.93 TB | 8.77 TB |
+| inactive_split_bytes.large_pool.peak | 2.34 GB | 3.06 GB | -771764224 Bytes |
+| inactive_split_bytes.small_pool.allocated | 10.33 GB | 12.18 GB | -1981938176 Bytes |
+| inactive_split_bytes.small_pool.current | 217.5 KB | 392.5 KB | -179200 Bytes |
+| inactive_split_bytes.small_pool.freed | 10.33 GB | 12.18 GB | -1981758976 Bytes |
+| inactive_split_bytes.small_pool.peak | 2.09 MB | 2.14 MB | -47104 Bytes |
+| max_split_size | -1 | -1 | 0 |
+| num_alloc_retries | 0 | 0 | 0 |
+| num_ooms | 0 | 0 | 0 |
+| oversize_allocations.allocated | 0 | 0 | 0 |
+| oversize_allocations.current | 0 | 0 | 0 |
+| oversize_allocations.freed | 0 | 0 | 0 |
+| oversize_allocations.peak | 0 | 0 | 0 |
+| oversize_segments.allocated | 0 | 0 | 0 |
+| oversize_segments.current | 0 | 0 | 0 |
+| oversize_segments.freed | 0 | 0 | 0 |
+| oversize_segments.peak | 0 | 0 | 0 |
+| reserved_bytes.all.allocated | 12.73 GB | 8.9 GB | 3.83 GB |
+| reserved_bytes.all.current | 12.73 GB | 8.9 GB | 3.83 GB |
+| reserved_bytes.all.freed | 0 Bytes | 0 Bytes | 0 Bytes |
+| reserved_bytes.all.peak | 12.73 GB | 8.9 GB | 3.83 GB |
+| reserved_bytes.large_pool.allocated | 12.7 GB | 8.87 GB | 3.83 GB |
+| reserved_bytes.large_pool.current | 12.7 GB | 8.87 GB | 3.83 GB |
+| reserved_bytes.large_pool.freed | 0 Bytes | 0 Bytes | 0 Bytes |
+| reserved_bytes.large_pool.peak | 12.7 GB | 8.87 GB | 3.83 GB |
+| reserved_bytes.small_pool.allocated | 26.0 MB | 26.0 MB | 0 Bytes |
+| reserved_bytes.small_pool.current | 26.0 MB | 26.0 MB | 0 Bytes |
+| reserved_bytes.small_pool.freed | 0 Bytes | 0 Bytes | 0 Bytes |
+| reserved_bytes.small_pool.peak | 26.0 MB | 26.0 MB | 0 Bytes |
+| segment.all.allocated | 43 | 40 | 3 |
+| segment.all.current | 43 | 40 | 3 |
+| segment.all.freed | 0 | 0 | 0 |
+| segment.all.peak | 43 | 40 | 3 |
+| segment.large_pool.allocated | 30 | 27 | 3 |
+| segment.large_pool.current | 30 | 27 | 3 |
+| segment.large_pool.freed | 0 | 0 | 0 |
+| segment.large_pool.peak | 30 | 27 | 3 |
+| segment.small_pool.allocated | 13 | 13 | 0 |
+| segment.small_pool.current | 13 | 13 | 0 |
+| segment.small_pool.freed | 0 | 0 | 0 |
+| segment.small_pool.peak | 13 | 13 | 0 |
